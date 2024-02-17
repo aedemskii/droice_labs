@@ -1,0 +1,15 @@
+.app {
+    font-family: 'FuturaLight';
+    color: rgb(70, 70, 70);
+    cursor: none;
+    @import '../components/Title/styles/Title.scss';
+    @import '../components/Dendrogram/styles/Dendrogram.scss';
+    @import '../components/Cursor/styles/Cursor.scss';
+}
+
+@font-face {
+    font-family: "FuturaLight";
+    src: url("./font/FuturaLight.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}

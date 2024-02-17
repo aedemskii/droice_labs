@@ -1,0 +1,22 @@
+.cursor {
+    $size: 40px;
+    $shift: 2px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    width: $size;
+    height: $size;
+    background-color: rgba(240, 240, 240, 0.2);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    cursor: none;
+    &.visible {
+        opacity: 1;
+    }
+    &.active {
+        width: $size - $shift;
+        height: $size - $shift;
+        background-color: rgba(240, 240, 240, 0.4);
+    }
+}

@@ -1,0 +1,48 @@
+@mixin smooth() {
+    $duration: 400ms;
+    &.smooth-enter {
+        &:not(.smooth-enter-active) {
+            &, & .branch {
+                top: 0 !important;
+                left: 0 !important;
+                opacity: 0.01;
+            }
+        }
+        &, & .branch {
+            svg {
+                transform: scale(0);
+            }
+        }
+        &.smooth-enter-active {
+            &, & .branch {
+                svg {
+                    transform: scale(1);
+                    transition: all $duration ease-out;
+                }
+                opacity: 1;
+                transition: all $duration ease-out;
+            }
+        }
+    }
+
+    &.smooth-leave {
+        &, & .branch {
+            opacity: 1;
+            svg {
+                transform: scale(1);
+            }
+        }
+        &.smooth-leave-active {
+            &, & .branch {
+                svg {
+                    transform: scale(0);
+                    transition: all $duration ease-out;
+                }
+                opacity: 0.01;
+                top: 0 !important;
+                left: 0 !important;
+                transition: all $duration ease-out;
+            }
+        }
+    }
+}

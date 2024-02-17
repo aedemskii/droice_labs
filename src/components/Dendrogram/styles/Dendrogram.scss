@@ -1,0 +1,53 @@
+@import './smooth.scss';
+.dendrogram {
+    position: relative;
+    margin: auto;
+    .branch {
+        position: absolute;
+        @include smooth();
+        overflow: visible;
+        svg {
+            position: absolute;
+            transform-origin: right;
+            overflow: visible;
+            &.top {
+                transform-origin: top right;
+            }
+            &.bottom {
+                transform-origin: bottom right;
+            }
+        }
+        .node-holder {
+            $size: 25px;
+            .node {
+                width: $size;
+                height: $size;
+                background-color: rgb(255, 255, 255);
+                border: 3px solid rgb(95, 169, 232);
+                border-radius: 50%;
+                box-sizing: border-box;
+                &.collapsible {
+                    &.opened {
+                        background-color: rgb(255, 255, 255);
+                    }
+                    background-color: rgb(198, 228, 253);
+                }
+            }
+            .node-name-holder {
+                position: absolute;
+                height: 100%;
+                right: 100%;
+                .node-name {
+                    position: relative;
+                    top: 50%;
+                    margin-right: 8px;
+                    transform: translate(0, -50%);
+                    font-size: 14px;
+                    font-weight: bold;
+                    white-space: nowrap;
+                    letter-spacing: 0.5px;
+                }
+            }
+        }
+    }
+}

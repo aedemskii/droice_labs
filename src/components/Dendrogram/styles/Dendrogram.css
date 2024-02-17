@@ -1,0 +1,62 @@
+.dendrogram {
+  position: relative;
+  margin: auto; }
+  .dendrogram .branch {
+    position: absolute;
+    overflow: visible; }
+    .dendrogram .branch.smooth-enter:not(.smooth-enter-active), .dendrogram .branch.smooth-enter:not(.smooth-enter-active) .branch {
+      top: 0 !important;
+      left: 0 !important;
+      opacity: 0.01; }
+    .dendrogram .branch.smooth-enter svg, .dendrogram .branch.smooth-enter .branch svg {
+      transform: scale(0); }
+    .dendrogram .branch.smooth-enter.smooth-enter-active, .dendrogram .branch.smooth-enter.smooth-enter-active .branch {
+      opacity: 1;
+      transition: all 400ms ease-out; }
+      .dendrogram .branch.smooth-enter.smooth-enter-active svg, .dendrogram .branch.smooth-enter.smooth-enter-active .branch svg {
+        transform: scale(1);
+        transition: all 400ms ease-out; }
+    .dendrogram .branch.smooth-leave, .dendrogram .branch.smooth-leave .branch {
+      opacity: 1; }
+      .dendrogram .branch.smooth-leave svg, .dendrogram .branch.smooth-leave .branch svg {
+        transform: scale(1); }
+    .dendrogram .branch.smooth-leave.smooth-leave-active, .dendrogram .branch.smooth-leave.smooth-leave-active .branch {
+      opacity: 0.01;
+      top: 0 !important;
+      left: 0 !important;
+      transition: all 400ms ease-out; }
+      .dendrogram .branch.smooth-leave.smooth-leave-active svg, .dendrogram .branch.smooth-leave.smooth-leave-active .branch svg {
+        transform: scale(0);
+        transition: all 400ms ease-out; }
+    .dendrogram .branch svg {
+      position: absolute;
+      transform-origin: right;
+      overflow: visible; }
+      .dendrogram .branch svg.top {
+        transform-origin: top right; }
+      .dendrogram .branch svg.bottom {
+        transform-origin: bottom right; }
+    .dendrogram .branch .node-holder .node {
+      width: 25px;
+      height: 25px;
+      background-color: white;
+      border: 3px solid #5fa9e8;
+      border-radius: 50%;
+      box-sizing: border-box; }
+      .dendrogram .branch .node-holder .node.collapsible {
+        background-color: #c6e4fd; }
+        .dendrogram .branch .node-holder .node.collapsible.opened {
+          background-color: white; }
+    .dendrogram .branch .node-holder .node-name-holder {
+      position: absolute;
+      height: 100%;
+      right: 100%; }
+      .dendrogram .branch .node-holder .node-name-holder .node-name {
+        position: relative;
+        top: 50%;
+        margin-right: 8px;
+        transform: translate(0, -50%);
+        font-size: 14px;
+        font-weight: bold;
+        white-space: nowrap;
+        letter-spacing: 0.5px; }
